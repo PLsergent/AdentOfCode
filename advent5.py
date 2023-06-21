@@ -5,13 +5,13 @@ content = [x.replace("[", "*").replace("]", "*").replace(" ", "*").strip() for x
 stacks = [[] for i in range(9)]
 
 # Fill stacks
-for i in content:
-    if i.startswith("*1"):
+for line in content:
+    if line.startswith("*1"):
         break
 
-    i = "**" + i + "**"
+    line = "**" + line + "**"
     index_next_letter = 0
-    for c in i:
+    for c in line:
         if c != "*":
             stack_number = index_next_letter//4 + 1
             stacks[stack_number-1].append(c)
