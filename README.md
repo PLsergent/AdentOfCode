@@ -1,3 +1,3 @@
-# AdentOfCode
+# Adent of code
 
-https://adventofcode.com/2022
+https://adventofcode.com
