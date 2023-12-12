@@ -90,6 +90,7 @@ for line in content:
 
     for card in hand:
         cards_occ[card] += 1
+
     if cards_occ["J"] == 0:
         if 5 in cards_occ.values():
             type_dict["five"].append(index)
@@ -109,29 +110,20 @@ for line in content:
     else:
         c = cards_occ["J"]
         del cards_occ["J"]
-        print("J ##########", c)
-        print(hand)
         if 5 - c in cards_occ.values():
             type_dict["five"].append(index)
-            print("five")
         elif 4 - c in cards_occ.values():
             type_dict["four"].append(index)
-            print("four")
         elif list(cards_occ.values()).count(2) == 2:
-            print("fh")
             type_dict["fh"].append(index)
         elif 3 - c in cards_occ.values():
             type_dict["three"].append(index)
-            print("three")
         elif 2 in cards_occ.values():
             type_dict["two_pairs"].append(index)
-            print("two_pairs")
         elif 2 - c in cards_occ.values():
             type_dict["one_pair"].append(index)
-            print("one_pair")
         else:
             type_dict["one_pair"].append(index)
-            print("one_pair")
     index += 1
 
 values_ordered = []
